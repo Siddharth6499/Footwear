@@ -12,7 +12,7 @@ cd ./my-project
 
 - Point your virtual host to `my-project/web` 
 - Open https://your-host/admin in your browser
-- Done! 😎
+- Done! 
 
 ## Docker
 
