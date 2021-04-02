@@ -17,8 +17,6 @@ class Product implements SelectOptionsProviderInterface
         $result = array();
 
         $brands = new Brand\Listing();
-        // $brands->setCondition("active = ?",1);
-        //p_r($brand->getActive());
         foreach($brands as $brand){
             array_push($result, [ "key" =>$brand->getName(), "value"=>$brand->getName()]);
         }
