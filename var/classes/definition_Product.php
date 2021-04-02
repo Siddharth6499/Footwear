@@ -15,15 +15,15 @@ Fields Summary:
 - discount [numeric]
 - weight [quantityValue]
 - image [manyToOneRelation]
-- madeInCountry [country]
 - color [rgbaColor]
 - category [manyToOneRelation]
 - variants [objectbricks]
 - manufacturedate [date]
-- expirydate [date]
+- madeInCountry [country]
 - isReturnable [booleanSelect]
 - groupType [select]
 - status [booleanSelect]
+- dynamicSelect [select]
 */ 
 
 
@@ -32,7 +32,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Product',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1617265005,
+   'modificationDate' => 1617371825,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -353,7 +353,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -407,6 +407,132 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'visibleSearch' => false,
           )),
           9 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\RgbaColor::__set_state(array(
+             'fieldtype' => 'rgbaColor',
+             'width' => NULL,
+             'queryColumnType' => 
+            array (
+              'rgb' => 'VARCHAR(6) NULL DEFAULT NULL',
+              'a' => 'VARCHAR(2) NULL DEFAULT NULL',
+            ),
+             'columnType' => 
+            array (
+              'rgb' => 'VARCHAR(6) NULL DEFAULT NULL',
+              'a' => 'VARCHAR(2) NULL DEFAULT NULL',
+            ),
+             'phpdocType' => '\\Pimcore\\Model\\DataObject\\Data\\RgbaColor',
+             'name' => 'color',
+             'title' => 'Color',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+          )),
+          10 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+             'fieldtype' => 'manyToOneRelation',
+             'width' => '',
+             'assetUploadPath' => '',
+             'relationType' => true,
+             'queryColumnType' => 
+            array (
+              'id' => 'int(11)',
+              'type' => 'enum(\'document\',\'asset\',\'object\')',
+            ),
+             'phpdocType' => '\\Pimcore\\Model\\Document\\Page | \\Pimcore\\Model\\Document\\Snippet | \\Pimcore\\Model\\Document | \\Pimcore\\Model\\Asset | \\Pimcore\\Model\\DataObject\\AbstractObject',
+             'objectsAllowed' => true,
+             'assetsAllowed' => false,
+             'assetTypes' => 
+            array (
+            ),
+             'documentsAllowed' => false,
+             'documentTypes' => 
+            array (
+            ),
+             'classes' => 
+            array (
+              0 => 
+              array (
+                'classes' => 'Category',
+              ),
+            ),
+             'pathFormatterClass' => '',
+             'name' => 'category',
+             'title' => 'Category',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+          )),
+          11 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
+             'fieldtype' => 'objectbricks',
+             'phpdocType' => '\\Pimcore\\Model\\DataObject\\Objectbrick',
+             'allowedTypes' => 
+            array (
+              0 => 'sneakers',
+              1 => 'Sandals',
+              2 => 'shoes',
+              3 => 'Sports',
+              4 => 'Casual',
+            ),
+             'maxItems' => '',
+             'border' => false,
+             'name' => 'variants',
+             'title' => 'Variants',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+          )),
+          12 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Date::__set_state(array(
+             'fieldtype' => 'date',
+             'queryColumnType' => 'bigint(20)',
+             'columnType' => 'bigint(20)',
+             'phpdocType' => '\\Carbon\\Carbon',
+             'defaultValue' => NULL,
+             'useCurrentDate' => false,
+             'name' => 'manufacturedate',
+             'title' => 'Manufacture Date',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'defaultValueGenerator' => '',
+          )),
+          13 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Country::__set_state(array(
              'fieldtype' => 'country',
              'restrictTo' => 'IN,GL,DE,FR,DK',
@@ -1658,7 +1784,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                 'value' => 'AX',
               ),
             ),
-             'width' => NULL,
+             'width' => '',
              'defaultValue' => NULL,
              'optionsProviderClass' => NULL,
              'optionsProviderData' => NULL,
@@ -1669,132 +1795,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'dynamicOptions' => false,
              'name' => 'madeInCountry',
              'title' => 'madeInCountry',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => NULL,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'defaultValueGenerator' => '',
-          )),
-          10 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\RgbaColor::__set_state(array(
-             'fieldtype' => 'rgbaColor',
-             'width' => NULL,
-             'queryColumnType' => 
-            array (
-              'rgb' => 'VARCHAR(6) NULL DEFAULT NULL',
-              'a' => 'VARCHAR(2) NULL DEFAULT NULL',
-            ),
-             'columnType' => 
-            array (
-              'rgb' => 'VARCHAR(6) NULL DEFAULT NULL',
-              'a' => 'VARCHAR(2) NULL DEFAULT NULL',
-            ),
-             'phpdocType' => '\\Pimcore\\Model\\DataObject\\Data\\RgbaColor',
-             'name' => 'color',
-             'title' => 'Color',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-          )),
-          11 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
-             'fieldtype' => 'manyToOneRelation',
-             'width' => '',
-             'assetUploadPath' => '',
-             'relationType' => true,
-             'queryColumnType' => 
-            array (
-              'id' => 'int(11)',
-              'type' => 'enum(\'document\',\'asset\',\'object\')',
-            ),
-             'phpdocType' => '\\Pimcore\\Model\\Document\\Page | \\Pimcore\\Model\\Document\\Snippet | \\Pimcore\\Model\\Document | \\Pimcore\\Model\\Asset | \\Pimcore\\Model\\DataObject\\AbstractObject',
-             'objectsAllowed' => true,
-             'assetsAllowed' => false,
-             'assetTypes' => 
-            array (
-            ),
-             'documentsAllowed' => false,
-             'documentTypes' => 
-            array (
-            ),
-             'classes' => 
-            array (
-              0 => 
-              array (
-                'classes' => 'Category',
-              ),
-            ),
-             'pathFormatterClass' => '',
-             'name' => 'category',
-             'title' => 'Category',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-          )),
-          12 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
-             'fieldtype' => 'objectbricks',
-             'phpdocType' => '\\Pimcore\\Model\\DataObject\\Objectbrick',
-             'allowedTypes' => 
-            array (
-              0 => 'sneakers',
-              1 => 'Derby',
-              2 => 'Brogues',
-              3 => 'Sandals',
-              4 => 'Oxfords',
-            ),
-             'maxItems' => '',
-             'border' => false,
-             'name' => 'variants',
-             'title' => 'Variants',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-          )),
-          13 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Date::__set_state(array(
-             'fieldtype' => 'date',
-             'queryColumnType' => 'bigint(20)',
-             'columnType' => 'bigint(20)',
-             'phpdocType' => '\\Carbon\\Carbon',
-             'defaultValue' => NULL,
-             'useCurrentDate' => false,
-             'name' => 'manufacturedate',
-             'title' => 'Manufacture Date',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -1810,30 +1810,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           14 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Date::__set_state(array(
-             'fieldtype' => 'date',
-             'queryColumnType' => 'bigint(20)',
-             'columnType' => 'bigint(20)',
-             'phpdocType' => '\\Carbon\\Carbon',
-             'defaultValue' => NULL,
-             'useCurrentDate' => false,
-             'name' => 'expirydate',
-             'title' => 'Expiry Date',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'defaultValueGenerator' => '',
-          )),
-          15 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\BooleanSelect::__set_state(array(
              'fieldtype' => 'booleanSelect',
              'yesLabel' => 'yes',
@@ -1867,7 +1843,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -1876,7 +1852,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'visibleGridView' => false,
              'visibleSearch' => false,
           )),
-          16 => 
+          15 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
              'fieldtype' => 'select',
              'options' => 
@@ -1912,7 +1888,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -1922,7 +1898,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'visibleSearch' => false,
              'defaultValueGenerator' => '',
           )),
-          17 => 
+          16 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\BooleanSelect::__set_state(array(
              'fieldtype' => 'booleanSelect',
              'yesLabel' => 'Available',
@@ -1956,7 +1932,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -1964,6 +1940,47 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
+          )),
+          17 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'fieldtype' => 'select',
+             'options' => 
+            array (
+              0 => 
+              array (
+                'key' => 'Nike',
+                'value' => 'Nike',
+              ),
+              1 => 
+              array (
+                'key' => 'Woodland',
+                'value' => 'Woodland',
+              ),
+            ),
+             'width' => '',
+             'defaultValue' => '',
+             'optionsProviderClass' => '\\AppBundle\\DynamicSelect\\Product',
+             'optionsProviderData' => '',
+             'queryColumnType' => 'varchar',
+             'columnType' => 'varchar',
+             'columnLength' => 190,
+             'phpdocType' => 'string',
+             'dynamicOptions' => false,
+             'name' => 'dynamicSelect',
+             'title' => 'dynamicSelect',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'defaultValueGenerator' => '',
           )),
         ),
          'locked' => false,

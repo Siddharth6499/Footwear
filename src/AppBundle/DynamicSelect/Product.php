@@ -1,27 +1,26 @@
 <?php
 
-namespace AppBundle\Dynamicselect;
+namespace AppBundle\DynamicSelect;
 
-use Pimcore\Model\DataObject\Category;
-use Pimcore\Model\DataObject\ClassDefinition\Data;
-
+use Pimcore\Model\DataObject\Brand;
 use Pimcore\Model\DataObject\ClassDefinition\DynamicOptionsProvider\SelectOptionsProviderInterface;
 
-
-class OptionsProvider implements SelectOptionsProviderInterface
+class Product implements SelectOptionsProviderInterface
 {
     /**
-     * @param array $context
-     * @param Data $fieldDefinition 
+     * @param $context array
+     * @param $fieldDefinition Data
      * @return array
      */
-    public function getOptions($context, $fieldDefinition) {
-        $object = new Category\Listing();
+    public function getOptions($context, $fieldDefinition)
+    {
         $result = array();
-     //   $object->setCondition('valid = ?',1);
-        foreach($object as $objects)
-        {
-          array_push($result, ["key" =>$objects->getCategoryName(), "value"=>$objects->getCategoryName()]);
+
+        $brands = new Brand\Listing();
+        // $brands->setCondition("active = ?",1);
+        //p_r($brand->getActive());
+        foreach($brands as $brand){
+            array_push($result, [ "key" =>$brand->getName(), "value"=>$brand->getName()]);
         }
         return $result;
     }
@@ -44,5 +43,4 @@ class OptionsProvider implements SelectOptionsProviderInterface
     public function hasStaticOptions($context, $fieldDefinition) {
         return true;
     }
-
 }

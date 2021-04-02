@@ -6,19 +6,18 @@
 
 
 Fields Summary: 
-- firstname [firstname]
-- lastname [lastname]
-- email [email]
-- gender [gender]
+- SKU [input]
+- name [input]
+- status [checkbox]
 */ 
 
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
-   'id' => '5',
-   'name' => 'User',
+   'id' => '4',
+   'name' => 'Brand',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1617214805,
+   'modificationDate' => 1617369047,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -72,8 +71,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'childs' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Firstname::__set_state(array(
-             'fieldtype' => 'firstname',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'fieldtype' => 'input',
              'width' => NULL,
              'defaultValue' => NULL,
              'queryColumnType' => 'varchar',
@@ -81,15 +80,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'columnLength' => 190,
              'phpdocType' => 'string',
              'regex' => '',
-             'unique' => NULL,
-             'showCharCount' => NULL,
-             'name' => 'firstname',
-             'title' => 'Firstname',
+             'unique' => false,
+             'showCharCount' => false,
+             'name' => 'SKU',
+             'title' => 'SKU',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => false,
+             'locked' => NULL,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -100,8 +99,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Lastname::__set_state(array(
-             'fieldtype' => 'lastname',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'fieldtype' => 'input',
              'width' => NULL,
              'defaultValue' => NULL,
              'queryColumnType' => 'varchar',
@@ -109,15 +108,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'columnLength' => 190,
              'phpdocType' => 'string',
              'regex' => '',
-             'unique' => NULL,
-             'showCharCount' => NULL,
-             'name' => 'lastname',
-             'title' => 'Lastname',
+             'unique' => false,
+             'showCharCount' => false,
+             'name' => 'name',
+             'title' => 'name',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => false,
+             'locked' => NULL,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -128,75 +127,19 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Email::__set_state(array(
-             'fieldtype' => 'email',
-             'width' => NULL,
+          Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
+             'fieldtype' => 'checkbox',
              'defaultValue' => NULL,
-             'queryColumnType' => 'varchar',
-             'columnType' => 'varchar',
-             'columnLength' => 190,
-             'phpdocType' => 'string',
-             'regex' => '',
-             'unique' => NULL,
-             'showCharCount' => NULL,
-             'name' => 'email',
-             'title' => 'Email',
+             'queryColumnType' => 'tinyint(1)',
+             'columnType' => 'tinyint(1)',
+             'phpdocType' => 'bool',
+             'name' => 'status',
+             'title' => 'status',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'defaultValueGenerator' => '',
-          )),
-          3 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Gender::__set_state(array(
-             'fieldtype' => 'gender',
-             'options' => 
-            array (
-              0 => 
-              array (
-                'key' => 'male',
-                'value' => 'male',
-              ),
-              1 => 
-              array (
-                'key' => 'female',
-                'value' => 'female',
-              ),
-              2 => 
-              array (
-                'key' => 'other',
-                'value' => 'other',
-              ),
-              3 => 
-              array (
-                'key' => '',
-                'value' => 'unknown',
-              ),
-            ),
-             'width' => '',
-             'defaultValue' => NULL,
-             'optionsProviderClass' => NULL,
-             'optionsProviderData' => NULL,
-             'queryColumnType' => 'varchar',
-             'columnType' => 'varchar',
-             'columnLength' => 190,
-             'phpdocType' => 'string',
-             'dynamicOptions' => false,
-             'name' => 'gender',
-             'title' => 'Gender',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
+             'locked' => NULL,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',

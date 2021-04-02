@@ -2,12 +2,10 @@
 
 /** 
 Fields Summary: 
-- oxfordsDD22 [checkbox]
-- oxfordsMG82 [checkbox]
-- oxfordsMG6 [checkbox]
-- oxfordsMG2 [checkbox]
-- oxfordsMG3 [checkbox]
-- oxfordsMarti [checkbox]
+- runningShoes [checkbox]
+- courtShoes [checkbox]
+- cleats [checkbox]
+- hikingShoes [checkbox]
 */ 
 
 
@@ -21,7 +19,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
     ),
   ),
    'dao' => NULL,
-   'key' => 'Oxfords',
+   'key' => 'Sports',
    'parentClass' => '',
    'implementsInterfaces' => '',
    'title' => '',
@@ -71,8 +69,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'oxfordsDD22',
-             'title' => 'oxfordsDD22',
+             'name' => 'runningShoes',
+             'title' => 'runningShoes',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -94,8 +92,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'oxfordsMG82',
-             'title' => 'oxfordsMG82',
+             'name' => 'courtShoes',
+             'title' => 'courtShoes',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -117,8 +115,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'oxfordsMG6',
-             'title' => 'oxfordsMG6',
+             'name' => 'cleats',
+             'title' => 'cleats',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -140,54 +138,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'oxfordsMG2',
-             'title' => 'oxfordsMG2',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => NULL,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'defaultValueGenerator' => '',
-          )),
-          4 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
-             'fieldtype' => 'checkbox',
-             'defaultValue' => NULL,
-             'queryColumnType' => 'tinyint(1)',
-             'columnType' => 'tinyint(1)',
-             'phpdocType' => 'bool',
-             'name' => 'oxfordsMG3',
-             'title' => 'oxfordsMG3',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => NULL,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'defaultValueGenerator' => '',
-          )),
-          5 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
-             'fieldtype' => 'checkbox',
-             'defaultValue' => NULL,
-             'queryColumnType' => 'tinyint(1)',
-             'columnType' => 'tinyint(1)',
-             'phpdocType' => 'bool',
-             'name' => 'oxfordsMarti',
-             'title' => 'oxfordsMarti',
+             'name' => 'hikingShoes',
+             'title' => 'hikingShoes',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,

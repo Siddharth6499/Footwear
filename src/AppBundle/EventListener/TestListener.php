@@ -1,11 +1,11 @@
 <?php
 namespace AppBundle\EventListener;
-  
+
 use Pimcore\Event\Model\ElementEventInterface;
 use Pimcore\Event\Model\DataObjectEvent;
 use Pimcore\Event\Model\AssetEvent;
 use Pimcore\Event\Model\DocumentEvent;
-use Pimcore\Model\DataObject\Demo;
+use Pimcore\Model\DataObject\Product;
 
 class TestListener {
     
@@ -18,7 +18,7 @@ class TestListener {
     $date = date("Y-m-d");
    	if($product->getManufacturedate() > $date)
    	{
-           
+    
    	throw new \Pimcore\Model\Element\ValidationException("Invalid Date !!!!!!!!!!!!!!!!!");
    	}
    

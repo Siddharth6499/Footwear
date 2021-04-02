@@ -2,11 +2,13 @@
 
 /** 
 Fields Summary: 
-- derbyR1 [checkbox]
-- derbyQ90 [checkbox]
-- derbyQ96 [checkbox]
-- derbyQ101 [checkbox]
-- derby33DD [checkbox]
+- athleticShoes [checkbox]
+- balletShoes [checkbox]
+- beachShoes [checkbox]
+- bowlingShoes [checkbox]
+- brogues [checkbox]
+- highHeels [checkbox]
+- cyclingShoes [checkbox]
 */ 
 
 
@@ -20,7 +22,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
     ),
   ),
    'dao' => NULL,
-   'key' => 'Derby',
+   'key' => 'shoes',
    'parentClass' => '',
    'implementsInterfaces' => '',
    'title' => '',
@@ -70,8 +72,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'derbyR1',
-             'title' => 'derbyR1',
+             'name' => 'athleticShoes',
+             'title' => 'athletic Shoes',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -93,8 +95,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'derbyQ90',
-             'title' => 'derbyQ90',
+             'name' => 'balletShoes',
+             'title' => 'ballet Shoes',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -116,8 +118,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'derbyQ96',
-             'title' => 'derbyQ96',
+             'name' => 'beachShoes',
+             'title' => 'beach Shoes',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -139,8 +141,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'derbyQ101',
-             'title' => 'derbyQ101',
+             'name' => 'bowlingShoes',
+             'title' => 'bowling Shoes',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -162,8 +164,54 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'derby33DD',
-             'title' => 'derby33DD',
+             'name' => 'brogues',
+             'title' => 'brogues',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => NULL,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'defaultValueGenerator' => '',
+          )),
+          5 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
+             'fieldtype' => 'checkbox',
+             'defaultValue' => NULL,
+             'queryColumnType' => 'tinyint(1)',
+             'columnType' => 'tinyint(1)',
+             'phpdocType' => 'bool',
+             'name' => 'highHeels',
+             'title' => 'highHeels',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => NULL,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'defaultValueGenerator' => '',
+          )),
+          6 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
+             'fieldtype' => 'checkbox',
+             'defaultValue' => NULL,
+             'queryColumnType' => 'tinyint(1)',
+             'columnType' => 'tinyint(1)',
+             'phpdocType' => 'bool',
+             'name' => 'cyclingShoes',
+             'title' => 'cyclingShoes',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,

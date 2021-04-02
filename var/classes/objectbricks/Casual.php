@@ -2,11 +2,11 @@
 
 /** 
 Fields Summary: 
-- broguesW1 [checkbox]
-- broguesOctave [checkbox]
-- broguesG1 [checkbox]
-- broguesG2 [checkbox]
-- broguesG9 [checkbox]
+- bucikSneakers [checkbox]
+- trendutySneakers [checkbox]
+- decastoLifestyle [checkbox]
+- tRock [checkbox]
+- layasaLifestyle [checkbox]
 */ 
 
 
@@ -20,7 +20,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
     ),
   ),
    'dao' => NULL,
-   'key' => 'Brogues',
+   'key' => 'Casual',
    'parentClass' => '',
    'implementsInterfaces' => '',
    'title' => '',
@@ -70,8 +70,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'broguesW1',
-             'title' => 'broguesW1',
+             'name' => 'bucikSneakers',
+             'title' => 'bucikSneakers',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -93,8 +93,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'broguesOctave',
-             'title' => 'broguesOctave',
+             'name' => 'trendutySneakers',
+             'title' => 'trendutySneakers',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -116,8 +116,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'broguesG1',
-             'title' => 'broguesG1',
+             'name' => 'decastoLifestyle',
+             'title' => 'decastoLifestyle',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -139,8 +139,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'broguesG2',
-             'title' => 'broguesG2',
+             'name' => 'tRock',
+             'title' => 'T-Rock',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -162,8 +162,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',
-             'name' => 'broguesG9',
-             'title' => 'broguesG9',
+             'name' => 'layasaLifestyle',
+             'title' => 'layasaLifestyle',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
