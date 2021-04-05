@@ -8,6 +8,7 @@ Fields Summary:
 - slipOn [checkbox]
 - leather [checkbox]
 - canvas [checkbox]
+- sneakersType [select]
 */ 
 
 
@@ -146,7 +147,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -169,7 +170,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -188,6 +189,57 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'phpdocType' => 'bool',
              'name' => 'canvas',
              'title' => 'canvas',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'defaultValueGenerator' => '',
+          )),
+          6 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'fieldtype' => 'select',
+             'options' => 
+            array (
+              0 => 
+              array (
+                'key' => 'canvas',
+                'value' => 'canvas',
+              ),
+              1 => 
+              array (
+                'key' => 'theAthleticOnes',
+                'value' => 'theAthleticOnes',
+              ),
+              2 => 
+              array (
+                'key' => 'highTopBasketball',
+                'value' => 'highTopBasketball',
+              ),
+              3 => 
+              array (
+                'key' => 'plimsoll',
+                'value' => 'plimsoll',
+              ),
+            ),
+             'width' => '',
+             'defaultValue' => '',
+             'optionsProviderClass' => '',
+             'optionsProviderData' => '',
+             'queryColumnType' => 'varchar',
+             'columnType' => 'varchar',
+             'columnLength' => 190,
+             'phpdocType' => 'string',
+             'dynamicOptions' => false,
+             'name' => 'sneakersType',
+             'title' => 'Sneakers Type',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,

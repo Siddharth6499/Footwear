@@ -54,29 +54,95 @@ button:hover {
 <body>
 
 
-<div class="container">
-<i class='fas fa-bread-slice'></i>
-<h3> Give us your valuable feedback..........</h3>
-  <form >
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+<div class="container"><br>
+		<h1 class="text-success text-center"> FeedBack Form</h1><br>
+		<div class="col-lg-8 m-auto d-block">
+			<form action="#" onsubmit="return validation()" method = "post">
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+				<div class="form-group">
+					<label> Firstname: </label>
+					<input type="text" name="firstname" class="form-control" id="user" autocomplete="off">
+					<span id="username" class="text-danger font-weight-bold"></span>
+				</div>
 
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="india">India</option>
-      <option value="uk">UK</option>
-      <option value="usa">USA</option>
-       <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-    </select>
+        <div class="form-group">
+					<label> Lastname: </label>
+					<input type="text" name="lastname" class="form-control" id="user" autocomplete="off">
+					<span id="username" class="text-danger font-weight-bold"></span>
+				</div>
 
-    <label for="feedback">Feedback</label>
-    <textarea id="feedback" name="feedback" placeholder="Write something.." style="height:200px"></textarea>
+				<div class="form-group">
+					<label> Email: </label>
+					<input type="text" name="email" class="form-control" id="emails" autocomplete="off">
+					<span id="emailids" class="text-danger font-weight-bold"></span>
+				</div>
 
-    <button onclick="location.href = 'http://project.local/thankyou';">Submit</button>
-  </form>
+        <div class="form-group">
+					<label> Review: </label>
+					<input type="text" name="comment" class="form-control" id="user" autocomplete="off">
+					<span id="username" class="text-danger font-weight-bold"></span>
+				</div>
+				<input type="submit" name="submit" value="submit" class="btn btn-success">
+				
+			</form>
+		</div>
+		
+	</div>
 </div>
 </body></html>
+<?php
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
+            $comment = $_POST['comment'];
+
+            // if(isset($firstname)) {
+            //   $feedback = new \Pimcore\Model\DataObject\Feedback();
+      
+            //   $feedback->setKey($firstname); 
+            //   $feedback->setPublished(true); 
+            //   $feedback->setParentId(36); 
+            //   $feedback->setFirstname($_POST['firstname']); 
+              
+            //   $feedback->save();
+
+            if(isset($firstname) && isset($lastname) 
+            && isset($email) && isset($comment)) {
+                $feedback = new \Pimcore\Model\DataObject\Feedback();
+        
+                $feedback->setKey($firstname); 
+                $feedback->setPublished(true); 
+                $feedback->setParentId(46); 
+                $feedback->setFirstname($_POST['firstname']); 
+                $feedback->setLastname($_POST['lastname']); 
+                $feedback->setEmail($_POST['email']); 
+                $feedback->setComment($_POST['comment']); 
+                $feedback->save();
+
+
+
+                $mail = new \Pimcore\Mail();
+                $mail->addTo('raj116347@gmail.com');
+                $mail->setSubject('Products Feedback');
+                $mail->setDocument('/feedbackEmail');
+                // $mail->setParams($params);
+                $mail->send();
+
+               
+            }
+            
+            // dump ($firstname);
+            // dump ($lastname);
+            // dump ($email);
+            // dump ($comment);
+            // die();  
+        ?>  
+
+    <h1><?= $this->input("headline", ["width" => 540]); ?></h1>
+
+    <?php while ($this->block("contentblock")->loop()) { ?>
+        <h2><?= $this->input("subline"); ?></h2>
+        <?= $this->wysiwyg("content"); ?>
+    <?php } ?>
+
+</html>

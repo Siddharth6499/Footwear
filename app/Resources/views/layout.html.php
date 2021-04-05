@@ -243,7 +243,7 @@ h1.b {
 <div styles ="background-image: url('https://www.kingarthurbaking.com/sites/default/files/inline-images/cupcakes.jpg');"> 
 
     <div class="myDiv">
-            <div class="claim"><h1 class="b"> The Bakery Shop</h1>
+            <div class="claim"><h1 class="b"> The Footwear Shop</h1>
 
               <img src="/myassets/logo.jpg" height="200" >
       </div>     
@@ -256,7 +256,7 @@ h1.b {
                 
 </div>
 <footer>
-<div class="container text-center p-20x">&copy;Copyright 2020, All Rights Reserved</div>
+<div class="container text-center p-20x"><center>&copy;Copyright 2021, All Rights Reserved</center></div>
 </footer>
 </div>
 </body>

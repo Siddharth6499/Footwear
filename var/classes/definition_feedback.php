@@ -6,18 +6,19 @@
 
 
 Fields Summary: 
-- SKU [input]
-- name [input]
-- status [checkbox]
+- firstname [firstname]
+- lastname [lastname]
+- email [email]
+- comment [textarea]
 */ 
 
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
-   'id' => '4',
-   'name' => 'Brand',
+   'id' => '6',
+   'name' => 'feedback',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1617369047,
+   'modificationDate' => 1617621263,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -71,8 +72,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'childs' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'fieldtype' => 'input',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Firstname::__set_state(array(
+             'fieldtype' => 'firstname',
              'width' => NULL,
              'defaultValue' => NULL,
              'queryColumnType' => 'varchar',
@@ -80,10 +81,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'columnLength' => 190,
              'phpdocType' => 'string',
              'regex' => '',
-             'unique' => false,
-             'showCharCount' => false,
-             'name' => 'SKU',
-             'title' => 'SKU',
+             'unique' => NULL,
+             'showCharCount' => NULL,
+             'name' => 'firstname',
+             'title' => 'Firstname',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -99,8 +100,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'fieldtype' => 'input',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Lastname::__set_state(array(
+             'fieldtype' => 'lastname',
              'width' => NULL,
              'defaultValue' => NULL,
              'queryColumnType' => 'varchar',
@@ -108,10 +109,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'columnLength' => 190,
              'phpdocType' => 'string',
              'regex' => '',
-             'unique' => false,
-             'showCharCount' => false,
-             'name' => 'name',
-             'title' => 'name',
+             'unique' => NULL,
+             'showCharCount' => NULL,
+             'name' => 'lastname',
+             'title' => 'Lastname',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -127,14 +128,19 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
-             'fieldtype' => 'checkbox',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Email::__set_state(array(
+             'fieldtype' => 'email',
+             'width' => NULL,
              'defaultValue' => NULL,
-             'queryColumnType' => 'tinyint(1)',
-             'columnType' => 'tinyint(1)',
-             'phpdocType' => 'bool',
-             'name' => 'status',
-             'title' => 'status',
+             'queryColumnType' => 'varchar',
+             'columnType' => 'varchar',
+             'columnLength' => 190,
+             'phpdocType' => 'string',
+             'regex' => '',
+             'unique' => NULL,
+             'showCharCount' => NULL,
+             'name' => 'email',
+             'title' => 'Email',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -148,6 +154,32 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'visibleGridView' => false,
              'visibleSearch' => false,
              'defaultValueGenerator' => '',
+          )),
+          3 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
+             'fieldtype' => 'textarea',
+             'width' => '',
+             'height' => '',
+             'maxLength' => NULL,
+             'showCharCount' => false,
+             'excludeFromSearchIndex' => false,
+             'queryColumnType' => 'longtext',
+             'columnType' => 'longtext',
+             'phpdocType' => 'string',
+             'name' => 'comment',
+             'title' => 'Comment',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => NULL,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
           )),
         ),
          'locked' => false,
