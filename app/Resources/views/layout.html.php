@@ -27,7 +27,7 @@ transform: translateY(-50%);
 body {
 font-family: 'Cabin', sans-serif;
 background-color: #f7f9fa;
-background-image: url('https://www.kingarthurbaking.com/sites/default/files/inline-images/cupcakes.jpg');
+background-image: url('https://i.pinimg.com/originals/7f/53/63/7f536368afa889b7f55db9e25ff7f2c0.jpg');
 background-repeat: no-repeat;
 background-size: cover;
 

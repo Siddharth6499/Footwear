@@ -77,7 +77,6 @@ class ProductCommand extends AbstractCommand
                     $object->setKey($prod->key);
                     $object->setParentId(26);
                     $object->setPublished(true);
-
                     $object->setSKU($prod->SKU);
                     $object->setName($prod->name);
                     $object->setPrice($prod->price);
@@ -103,16 +102,57 @@ class ProductCommand extends AbstractCommand
                         }
                     $manufactureDate = \Carbon\Carbon::parse($prod->manufactureDate);
                     $object->setManufactureDate($manufactureDate);
-                    $object->setDynamicSelect($prod->dynamicSelect);
+                    
                 
-                    // if($object->getTypes() == 'AcFeatures'){
-                    //     $extraFeatures = new Dataobject\Objectbrick\Data\AcFeatures($object);
-                    //     $object->getSpecificFeatures()->setAcFeatures($extraFeatures);
-                    //     $extraFeatures->setInstallationType($prod->installationType);
-                    //     $extraFeatures->setCapacity(new DataObject\Data\QuantityValue($prod->capacity, $unit->getId()));
-                    //     $unit = DataObject\QuantityValue\Unit::getByAbbreviation('ton');
-                    // }
+                    
+                
+                        $objBrick = new DataObject\Objectbrick\Data\Casual($object);
+                        $objBrick->setTypes($prod->types);
+                   
+                        $object->getVariants()->setCasual($objBrick);
+                    
+                    
+                        $Brick = new DataObject\Objectbrick\Data\Sandals($object);
+                        $Brick->setHeelType($prod->heelType);
+                       
+                        $object->getVariants ()->setSandals($Brick);
+
+
+                        $Brick = new DataObject\Objectbrick\Data\Sports($object);
+                        $Brick->setHeelType($prod->sportsshoesType);
+                       
+                        $object->getVariants ()->setSports($Brick);
+                    
                     $object->save();
+                    if(($prod->SKU)==NULL || ($prod->name)==NULL)
+                    {
+                     $msg ="SKU or Name is given NULL.\n";
+                    }
+                    else
+                   
+                    $msg ="Data Imported Successfully.\n";
+                    $count++;
+                    $logMsg=new \Pimcore\Model\DataObject\Log();        
+                    $logMsg->setKey("$prod->key");
+                    $logMsg->setPublished(true);
+                    $logMsg->setParentId(74);
+                    $logMsg->setMessage($msg);
+                    $logMsg->save();
+
+                    $log=new \Pimcore\Model\DataObject\Import\Listing();
+                    foreach($log as $prod)
+                    {                    
+                     //   $prod->setLog($msg);
+                        $prod->setStatus(true);
+                        $prod->save();
+                    }
+                    $mail = new \Pimcore\Mail();
+                    $mail->addTo('gargmansi24@gmail.com');
+                    $mail->setSubject('Products Imported Sucessfully');
+                    $mail->setDocument('/importEmail');
+                    // $mail->setParams($params);
+                    $mail->send();
+                   
                 }
 
 

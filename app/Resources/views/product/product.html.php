@@ -76,7 +76,7 @@ p {
     <div id="product">
     
         <?php
-            $prod = new \Pimcore\Model\DataObject\Demo\Listing();
+            $prod = new \Pimcore\Model\DataObject\Product\Listing();
 
        
         ?>
@@ -84,10 +84,20 @@ p {
             <tr>
             	 <th  >SKU</th>
                 <th  >Name</th>
-                <th  >Weight</th>
-                
+                <th  >Description</th>
+                <th  >Brand</th>
+                <th  >Price</th>
+                <th  >Size</th>
+                <th  >Discount</th>
+                <th  >Color</th>
+                <th  >Category</th>
+                <th  >Group Type</th>
+                <th  >Made in Country</th>
+                <th  >Returnable</th>
+                <th  >Status</th>
+                <th  >Manufacture Date</th>
                 <th  >Image</th>
-                <th  >Mfd On</th>
+                
             </tr>            
         </table>
         
@@ -99,12 +109,21 @@ p {
             ?>
             
             <tr >
-            <td ><?=$product->getDemoSKU(); ?></td>
-            <td ><?=$product->getDemoName(); ?></td>
-             <td ><?=$product->getWeight(); ?></td>
-              
-           
-            
+            <td ><?=$product->getSKU(); ?></td>
+            <td ><?=$product->getName(); ?></td>
+            <td ><?=$product->getDescription(); ?></td> 
+            <td ><?=$product->getBrand(); ?></td>
+            <td ><?=$product->getPrice(); ?></td>
+            <td ><?=$product->getSize(); ?></td>
+            <td ><?=$product->getDiscount(); ?></td>
+            <td ><?=$product->getColor(); ?></td> 
+            <td ><?=$product->getCategory(); ?></td>           
+            <td ><?=$product->getGroupType(); ?></td>
+            <td ><?=$product->getMadeIn(); ?></td>
+            <td ><?=$product->getReturnable(); ?></td>
+            <td ><?=$product->getStatus(); ?></td>
+            <td ><?=$product->getManufactureDate(); ?></td>
+
             <?php
 
 
@@ -115,7 +134,7 @@ p {
             ?>
 
          <td><?= $picture->getThumbnail()->getHtml(["width" => 100,"height" => 100])?> </td>
-             <td ><?=$product->getManufacturedOn(); ?></td>
+             
            
             <?php endif;
             

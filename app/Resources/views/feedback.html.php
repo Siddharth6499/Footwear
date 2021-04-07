@@ -122,7 +122,7 @@ button:hover {
 
 
                 $mail = new \Pimcore\Mail();
-                $mail->addTo('raj116347@gmail.com');
+                $mail->addTo('gargmansi24@gmail.com');
                 $mail->setSubject('Products Feedback');
                 $mail->setDocument('/feedbackEmail');
                 // $mail->setParams($params);

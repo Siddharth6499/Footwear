@@ -1,33 +1,42 @@
 <?php 
 
 /** 
+* Inheritance: no
+* Variants: no
+
+
 Fields Summary: 
-- shoesType [select]
+- message [input]
 */ 
 
 
-return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
-   'classDefinitions' => 
-  array (
-    0 => 
-    array (
-      'classname' => 'Product',
-      'fieldname' => 'variants',
-    ),
-  ),
-   'dao' => NULL,
-   'key' => 'shoes',
+return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
+   'id' => '7',
+   'name' => 'Log',
+   'description' => '',
+   'creationDate' => 0,
+   'modificationDate' => 1617729011,
+   'userOwner' => 2,
+   'userModification' => 2,
    'parentClass' => '',
    'implementsInterfaces' => '',
-   'title' => '',
-   'group' => '',
+   'listingParentClass' => '',
+   'useTraits' => '',
+   'listingUseTraits' => '',
+   'encryption' => false,
+   'encryptedTables' => 
+  array (
+  ),
+   'allowInherit' => false,
+   'allowVariants' => NULL,
+   'showVariants' => false,
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'fieldtype' => 'panel',
      'labelWidth' => 100,
      'layout' => NULL,
      'border' => false,
-     'name' => NULL,
+     'name' => 'pimcore_root',
      'type' => NULL,
      'region' => NULL,
      'title' => NULL,
@@ -60,37 +69,19 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
          'childs' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
-             'fieldtype' => 'select',
-             'options' => 
-            array (
-              0 => 
-              array (
-                'key' => 'cyclingShoes',
-                'value' => 'cyclingShoes',
-              ),
-              1 => 
-              array (
-                'key' => 'brogues',
-                'value' => 'brogues',
-              ),
-              2 => 
-              array (
-                'key' => 'bowlingShoes',
-                'value' => 'bowlingShoes',
-              ),
-            ),
-             'width' => '',
-             'defaultValue' => '',
-             'optionsProviderClass' => '',
-             'optionsProviderData' => '',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'fieldtype' => 'input',
+             'width' => NULL,
+             'defaultValue' => NULL,
              'queryColumnType' => 'varchar',
              'columnType' => 'varchar',
              'columnLength' => 190,
              'phpdocType' => 'string',
-             'dynamicOptions' => false,
-             'name' => 'shoesType',
-             'title' => 'Shoes Type',
+             'regex' => '',
+             'unique' => false,
+             'showCharCount' => false,
+             'name' => 'message',
+             'title' => 'Message',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -113,5 +104,37 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
      'locked' => false,
      'icon' => NULL,
   )),
+   'icon' => '',
+   'previewUrl' => '',
+   'group' => '',
+   'showAppLoggerTab' => false,
+   'linkGeneratorReference' => '',
+   'compositeIndices' => 
+  array (
+  ),
    'generateTypeDeclarations' => false,
+   'showFieldLookup' => false,
+   'propertyVisibility' => 
+  array (
+    'grid' => 
+    array (
+      'id' => true,
+      'key' => false,
+      'path' => true,
+      'published' => true,
+      'modificationDate' => true,
+      'creationDate' => true,
+    ),
+    'search' => 
+    array (
+      'id' => true,
+      'key' => false,
+      'path' => true,
+      'published' => true,
+      'modificationDate' => true,
+      'creationDate' => true,
+    ),
+  ),
+   'enableGridLocking' => false,
+   'dao' => NULL,
 ));

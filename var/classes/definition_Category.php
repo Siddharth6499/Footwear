@@ -6,8 +6,8 @@
 
 
 Fields Summary: 
-- categorySKU [input]
-- categoryName [input]
+- SKU [input]
+- name [input]
 - status [checkbox]
 */ 
 
@@ -17,9 +17,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Category',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1617350669,
+   'modificationDate' => 1617730993,
    'userOwner' => 2,
-   'userModification' => 6,
+   'userModification' => 2,
    'parentClass' => '',
    'implementsInterfaces' => '',
    'listingParentClass' => '',
@@ -82,7 +82,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'regex' => '',
              'unique' => true,
              'showCharCount' => false,
-             'name' => 'categorySKU',
+             'name' => 'SKU',
              'title' => 'Category SKU',
              'tooltip' => '',
              'mandatory' => true,
@@ -110,7 +110,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'regex' => '',
              'unique' => false,
              'showCharCount' => false,
-             'name' => 'categoryName',
+             'name' => 'name',
              'title' => 'Category Name',
              'tooltip' => '',
              'mandatory' => false,

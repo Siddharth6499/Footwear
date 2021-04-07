@@ -9,7 +9,7 @@ Fields Summary:
 - SKU [input]
 - name [input]
 - description [textarea]
-- brand [input]
+- brand [select]
 - price [numeric]
 - size [select]
 - discount [numeric]
@@ -22,7 +22,6 @@ Fields Summary:
 - returnable [checkbox]
 - groupType [select]
 - status [select]
-- dynamicSelect [select]
 */ 
 
 
@@ -31,7 +30,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Product',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1617643336,
+   'modificationDate' => 1617773537,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -167,17 +166,30 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'visibleSearch' => false,
           )),
           3 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'fieldtype' => 'input',
-             'width' => NULL,
-             'defaultValue' => NULL,
+          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'fieldtype' => 'select',
+             'options' => 
+            array (
+              0 => 
+              array (
+                'key' => 'Nike',
+                'value' => 'Nike',
+              ),
+              1 => 
+              array (
+                'key' => 'Woodland',
+                'value' => 'Woodland',
+              ),
+            ),
+             'width' => '',
+             'defaultValue' => '',
+             'optionsProviderClass' => '\\AppBundle\\DynamicSelect\\Product',
+             'optionsProviderData' => '',
              'queryColumnType' => 'varchar',
              'columnType' => 'varchar',
              'columnLength' => 190,
              'phpdocType' => 'string',
-             'regex' => '',
-             'unique' => false,
-             'showCharCount' => false,
+             'dynamicOptions' => false,
              'name' => 'brand',
              'title' => 'Brand',
              'tooltip' => '',
@@ -425,11 +437,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'phpdocType' => '\\Pimcore\\Model\\DataObject\\Objectbrick',
              'allowedTypes' => 
             array (
-              0 => 'sneakers',
-              1 => 'Sandals',
-              2 => 'shoes',
-              3 => 'Sports',
-              4 => 'Casual',
+              0 => 'Sandals',
+              1 => 'Sports',
+              2 => 'Casual',
             ),
              'maxItems' => '',
              'border' => false,
@@ -1762,7 +1772,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -1845,47 +1855,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'dynamicOptions' => false,
              'name' => 'status',
              'title' => 'Status',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => NULL,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'defaultValueGenerator' => '',
-          )),
-          16 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
-             'fieldtype' => 'select',
-             'options' => 
-            array (
-              0 => 
-              array (
-                'key' => 'Nike',
-                'value' => 'Nike',
-              ),
-              1 => 
-              array (
-                'key' => 'Woodland',
-                'value' => 'Woodland',
-              ),
-            ),
-             'width' => '',
-             'defaultValue' => '',
-             'optionsProviderClass' => '\\AppBundle\\DynamicSelect\\Product',
-             'optionsProviderData' => '',
-             'queryColumnType' => 'varchar',
-             'columnType' => 'varchar',
-             'columnLength' => 190,
-             'phpdocType' => 'string',
-             'dynamicOptions' => false,
-             'name' => 'dynamicSelect',
-             'title' => 'dynamicSelect',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
