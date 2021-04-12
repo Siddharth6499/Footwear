@@ -21,7 +21,7 @@ class ProductCommand extends AbstractCommand
     protected function configure()
     {
         $this
-            ->setName('Pimcore:CsvCommand:Product')
+            ->setName('pimcore:csvCommand')
             ->setDescription('imports csv files');
     }
 
@@ -69,20 +69,20 @@ class ProductCommand extends AbstractCommand
         }
         $data = json_decode($json);
         foreach ($data as $prod) {
-       
 
                 if ($prod->key != NULL) {
-                   
+                    try{
                     $object = new Pimcore\Model\DataObject\Product();
                     $object->setKey($prod->key);
-                    $object->setParentId(26);
+                    $object->setParentId(126);
                     $object->setPublished(true);
                     $object->setSKU($prod->SKU);
                     $object->setName($prod->name);
-                    $object->setPrice($prod->price);
-                    $object->setBrand($prod->brand); 
+                    $unit = DataObject\QuantityValue\Unit::getByAbbreviation('Rs');
+                    $object->setPrice(new DataObject\Data\QuantityValue($prod->price, $unit->getId()));
+                    $object->setBrand($prod->brand);
                     $object->setSize($prod->size);
-                    $object->setDescription($prod->description); 
+                    $object->setDescription($prod->description);
                     $object->setDiscount($prod->discount);
                     $object->setReturnable($prod->returnable);
                     $object->setMadeIn($prod->madeIn);
@@ -94,43 +94,179 @@ class ProductCommand extends AbstractCommand
                     $t->setRgba($prod->color);
                     $object->setColor($t);
                     $category = new \Pimcore\Model\DataObject\Category\Listing();
-                        $category->setCondition('categoryname = ?', $prod->category);
-                        $category->setLimit(1);
+                    $category->setCondition('name = ?', $prod->category);
+                    $category->setLimit(1);
                         foreach ($category as $cat) {
-                            //p_r($cat2);die;
                             $object->setCategory($cat);
                         }
                     $manufactureDate = \Carbon\Carbon::parse($prod->manufactureDate);
                     $object->setManufactureDate($manufactureDate);
                     
-                
-                    
-                
                         $objBrick = new DataObject\Objectbrick\Data\Casual($object);
                         $objBrick->setTypes($prod->types);
-                   
+                    
                         $object->getVariants()->setCasual($objBrick);
                     
                     
                         $Brick = new DataObject\Objectbrick\Data\Sandals($object);
                         $Brick->setHeelType($prod->heelType);
                        
-                        $object->getVariants ()->setSandals($Brick);
+                        $object->getVariants()->setSandals($Brick);
 
 
                         $Brick = new DataObject\Objectbrick\Data\Sports($object);
-                        $Brick->setHeelType($prod->sportsshoesType);
+                        $Brick->setsportsshoesType($prod->sportsshoesType);
                        
-                        $object->getVariants ()->setSports($Brick);
-                    
-                    $object->save();
-                    if(($prod->SKU)==NULL || ($prod->name)==NULL)
+                        $object->getVariants()->setSports($Brick);
+
+                        $object->save();
+
+                        // $logListing = new \Pimcore\Model\DataObject\Log\Listing(); 
+                        // $this->dump("in log");
+                        // $this->dump($object->getKey()) or die;
+                        // $this->dump($->getKey()) or die;
+                        // if($logListing->getKey() == $object->getKey())
+                        // {
+                        //     $object->update();
+                        // }
+                        
+                        $this->dump("Data Imported Successfully");
+
+                    }
+                    catch(\Exception $e)
                     {
-                     $msg ="SKU or Name is given NULL.\n";
+
+                    $msg = "";
+                    if($prod->SKU==NULL)
+                    {
+                     $msg .= "SKU is given NULL. \n";
+                    }
+                    if($prod->name==NULL)
+                    {
+                    $msg .= "Name is given NULL. \n";
+                    }
+                    if($prod->price==NULL)
+                    {
+                        $msg .= "Price is given NULL. \n";
+                    }
+                    if($prod->brand==NULL)
+                    {
+                        $msg .= "Brand is given NULL. \n";
+                    }
+                    if($prod->size==NULL)
+                    {
+                        $msg .= "Size is given NULL. \n";
+                    }
+                    if($prod->description==NULL)
+                    {
+                        $msg .= "Description is given NULL. \n";
+                    }
+                    if($prod->discount==NULL)
+                    {
+                        $msg .= "Discount is given NULL. \n";
+                    }
+                    if($prod->madeIn==NULL)
+                    {
+                        $msg .= "MadeIn is given NULL. \n";
+                    }
+                    if($prod->status==NULL)
+                    {
+                        $msg .= "Status is given NULL. \n";
+                    }
+                    if($prod->groupType==NULL)
+                    {
+                        $msg .= "Group Type is given NULL. \n";
+                    }
+                    if($prod->image==NULL)
+                    {
+                        $msg .= "Image is given NULL. \n";
+                    }
+                    if($prod->color==NULL)
+                    {
+                        $msg .= "Color is given NULL. \n";
+                    }
+                    if($prod->manufactureDate==NULL)
+                    {
+                        $msg .= "Manufactured Date is given NULL. \n";
                     }
                     else
-                   
-                    $msg ="Data Imported Successfully.\n";
+                    {
+                        $msg = "Data Imported Successfully";
+                    }
+
+
+                        $logMsg=new \Pimcore\Model\DataObject\Log();        
+                        $logMsg->setKey("$prod->key");
+                        $logMsg->setPublished(true);
+                        $logMsg->setParentId(74);
+                        $logMsg->setMessage($msg);
+                        $logMsg->save();
+                        $this->dump($logMsg->getKey()) or die;
+
+                        continue;
+                    }
+                    
+
+
+                    
+                    $msg = "";
+                    if($prod->SKU==NULL)
+                    {
+                     $msg .= "SKU is given NULL. \n";
+                    }
+                    if($prod->name==NULL)
+                    {
+                    $msg .= "Name is given NULL. \n";
+                    }
+                    if($prod->price==NULL)
+                    {
+                        $msg .= "Price is given NULL. \n";
+                    }
+                    if($prod->brand==NULL)
+                    {
+                        $msg .= "Brand is given NULL. \n";
+                    }
+                    if($prod->size==NULL)
+                    {
+                        $msg .= "Size is given NULL. \n";
+                    }
+                    if($prod->description==NULL)
+                    {
+                        $msg .= "Description is given NULL. \n";
+                    }
+                    if($prod->discount==NULL)
+                    {
+                        $msg .= "Discount is given NULL. \n";
+                    }
+                    if($prod->madeIn==NULL)
+                    {
+                        $msg .= "MadeIn is given NULL. \n";
+                    }
+                    if($prod->status==NULL)
+                    {
+                        $msg .= "Status is given NULL. \n";
+                    }
+                    if($prod->groupType==NULL)
+                    {
+                        $msg .= "Group Type is given NULL. \n";
+                    }
+                    if($prod->image==NULL)
+                    {
+                        $msg .= "Image is given NULL. \n";
+                    }
+                    if($prod->color==NULL)
+                    {
+                        $msg .= "Color is given NULL. \n";
+                    }
+                    if($prod->manufactureDate==NULL)
+                    {
+                        $msg .= "Manufactured Date is given NULL. \n";
+                    }
+                    else
+                    {
+                        $msg = "Data Imported Successfully";
+                    }
+
                     $count++;
                     $logMsg=new \Pimcore\Model\DataObject\Log();        
                     $logMsg->setKey("$prod->key");
@@ -138,6 +274,9 @@ class ProductCommand extends AbstractCommand
                     $logMsg->setParentId(74);
                     $logMsg->setMessage($msg);
                     $logMsg->save();
+
+
+                    
 
                     $log=new \Pimcore\Model\DataObject\Import\Listing();
                     foreach($log as $prod)
@@ -154,9 +293,11 @@ class ProductCommand extends AbstractCommand
                     $mail->send();
                    
                 }
+                
 
-
-                $this->dump('Data Imported Successfully');
+               
             }
+            
         }
+        
     }

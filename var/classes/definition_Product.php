@@ -10,7 +10,7 @@ Fields Summary:
 - name [input]
 - description [textarea]
 - brand [select]
-- price [numeric]
+- price [quantityValue]
 - size [select]
 - discount [numeric]
 - image [image]
@@ -30,7 +30,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Product',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1617773537,
+   'modificationDate' => 1618151256,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -98,7 +98,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'name' => 'SKU',
              'title' => 'SKU',
              'tooltip' => '',
-             'mandatory' => false,
+             'mandatory' => true,
              'noteditable' => false,
              'index' => false,
              'locked' => false,
@@ -126,7 +126,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'name' => 'name',
              'title' => 'Name',
              'tooltip' => '',
-             'mandatory' => false,
+             'mandatory' => true,
              'noteditable' => false,
              'index' => false,
              'locked' => false,
@@ -207,24 +207,33 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           4 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-             'fieldtype' => 'numeric',
+          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
+             'fieldtype' => 'quantityValue',
              'width' => 150,
+             'unitWidth' => NULL,
              'defaultValue' => NULL,
-             'queryColumnType' => 'double',
-             'columnType' => 'double',
-             'phpdocType' => 'float',
-             'integer' => false,
-             'unsigned' => false,
-             'minValue' => NULL,
-             'maxValue' => NULL,
-             'unique' => false,
-             'decimalSize' => NULL,
+             'defaultUnit' => '1013',
+             'validUnits' => 
+            array (
+              0 => '1013',
+            ),
              'decimalPrecision' => 3,
+             'autoConvert' => false,
+             'queryColumnType' => 
+            array (
+              'value' => 'double',
+              'unit' => 'varchar(50)',
+            ),
+             'columnType' => 
+            array (
+              'value' => 'double',
+              'unit' => 'varchar(50)',
+            ),
+             'phpdocType' => '\\Pimcore\\Model\\DataObject\\Data\\QuantityValue',
              'name' => 'price',
              'title' => 'Price',
              'tooltip' => '',
-             'mandatory' => false,
+             'mandatory' => true,
              'noteditable' => false,
              'index' => false,
              'locked' => false,
@@ -1762,7 +1771,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           13 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
              'fieldtype' => 'checkbox',
-             'defaultValue' => NULL,
+             'defaultValue' => 0,
              'queryColumnType' => 'tinyint(1)',
              'columnType' => 'tinyint(1)',
              'phpdocType' => 'bool',

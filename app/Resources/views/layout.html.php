@@ -224,18 +224,17 @@ text-align: center;
  
 h1.b {
   font-family: "Sofia", sans-serif;
+  color: white;
 }
  .myDiv {
-  border: 5px outset #471f16;
-  background-color: lightblue;    
- 
-  text-align: center;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1585314062604-1a357de8b000?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80');
 }
  
  
  </style>
     <meta charset="UTF-8">
-    <title>The Bakery Shop</title>
+    <title>The FootWear Shop</title>
     <link rel="stylesheet" type="text/css" href="/static/css/global.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
 </head>
@@ -245,7 +244,7 @@ h1.b {
     <div class="myDiv">
             <div class="claim"><h1 class="b"> The Footwear Shop</h1>
 
-              <img src="/myassets/logo.jpg" height="200" >
+              <img src="/myassets/logo.jpeg" height="200" >
       </div>     
             </div>
         </div>
