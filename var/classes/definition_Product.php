@@ -12,12 +12,12 @@ Fields Summary:
 - brand [select]
 - price [quantityValue]
 - size [select]
-- discount [numeric]
+- discount [quantityValue]
 - image [image]
 - color [rgbaColor]
 - category [manyToOneRelation]
 - variants [objectbricks]
-- manufacturedate [date]
+- manufactureDate [date]
 - madeIn [country]
 - returnable [checkbox]
 - groupType [select]
@@ -30,7 +30,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Product',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1618151256,
+   'modificationDate' => 1618429721,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -172,13 +172,28 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
               0 => 
               array (
-                'key' => 'Nike',
-                'value' => 'Nike',
+                'key' => 'Puma',
+                'value' => 'Puma',
               ),
               1 => 
               array (
-                'key' => 'Woodland',
-                'value' => 'Woodland',
+                'key' => 'Bata',
+                'value' => 'Bata',
+              ),
+              2 => 
+              array (
+                'key' => 'Adidas',
+                'value' => 'Adidas',
+              ),
+              3 => 
+              array (
+                'key' => 'Clarks',
+                'value' => 'Clarks',
+              ),
+              4 => 
+              array (
+                'key' => 'Nike',
+                'value' => 'Nike',
               ),
             ),
              'width' => '',
@@ -313,20 +328,29 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           6 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-             'fieldtype' => 'numeric',
-             'width' => '',
+          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
+             'fieldtype' => 'quantityValue',
+             'width' => NULL,
+             'unitWidth' => NULL,
              'defaultValue' => NULL,
-             'queryColumnType' => 'double',
-             'columnType' => 'double',
-             'phpdocType' => 'float',
-             'integer' => false,
-             'unsigned' => false,
-             'minValue' => NULL,
-             'maxValue' => NULL,
-             'unique' => false,
-             'decimalSize' => NULL,
+             'defaultUnit' => '1014',
+             'validUnits' => 
+            array (
+              0 => '1014',
+            ),
              'decimalPrecision' => NULL,
+             'autoConvert' => false,
+             'queryColumnType' => 
+            array (
+              'value' => 'double',
+              'unit' => 'varchar(50)',
+            ),
+             'columnType' => 
+            array (
+              'value' => 'double',
+              'unit' => 'varchar(50)',
+            ),
+             'phpdocType' => '\\Pimcore\\Model\\DataObject\\Data\\QuantityValue',
              'name' => 'discount',
              'title' => 'Discount',
              'tooltip' => '',
@@ -449,6 +473,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               0 => 'Sandals',
               1 => 'Sports',
               2 => 'Casual',
+              3 => 'Shoes',
             ),
              'maxItems' => '',
              'border' => false,
@@ -475,7 +500,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'phpdocType' => '\\Carbon\\Carbon',
              'defaultValue' => NULL,
              'useCurrentDate' => false,
-             'name' => 'manufacturedate',
+             'name' => 'manufactureDate',
              'title' => 'Manufacture Date',
              'tooltip' => '',
              'mandatory' => false,

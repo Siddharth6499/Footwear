@@ -15,9 +15,9 @@ $this->extend('layout.html.php');
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
+input[type=text,email], select, textarea {
+  width: 50%;
+  padding: 18px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -33,6 +33,8 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 38%;
+margin-top: 10%;
 }
 
 button:hover {
@@ -40,11 +42,11 @@ button:hover {
 }
 
 .container {
-  margin-top: 5px;
-  
-  border-radius: 5px;
-  background-color: lightblue;
-  padding: 20px;
+  margin-top: 22px;
+    margin-left: 40%;
+    border-radius: 31px;
+    padding: 19px;
+    margin-right: 37%;
 }
 </style>
 
@@ -55,31 +57,34 @@ button:hover {
 
 
 <div class="container"><br>
-		<h1 class="text-success text-center"> FeedBack Form</h1><br>
+		<h1 class="text-success text-center" style="color:white;">Give us your feedback...</h1><br>
 		<div class="col-lg-8 m-auto d-block">
 			<form action="#" onsubmit="return validation()" method = "post">
 
 				<div class="form-group">
-					<label> Firstname: </label>
-					<input type="text" name="firstname" class="form-control" id="user" autocomplete="off">
+					<label style="color:white;"> Firstname: </label>
+					<input type="text" name="firstname" class="form-control" id="user" autocomplete="off" required>
 					<span id="username" class="text-danger font-weight-bold"></span>
 				</div>
+        <br>
 
         <div class="form-group">
-					<label> Lastname: </label>
+					<label style="color:white;"> Lastname: </label>
 					<input type="text" name="lastname" class="form-control" id="user" autocomplete="off">
 					<span id="username" class="text-danger font-weight-bold"></span>
 				</div>
+        <br>
 
 				<div class="form-group">
-					<label> Email: </label>
-					<input type="text" name="email" class="form-control" id="emails" autocomplete="off">
+					<label style="color:white;"> Email:&emsp;&ensp;&nbsp;</label>
+					<input type="email" name="email" class="form-control" id="emails" autocomplete="off" required>
 					<span id="emailids" class="text-danger font-weight-bold"></span>
 				</div>
+         <br>
 
         <div class="form-group">
-					<label> Review: </label>
-					<input type="text" name="comment" class="form-control" id="user" autocomplete="off">
+					<label style="color:white;"> Review:&ensp;&ensp;</label>
+					<input type="textarea" name="comment" class="form-control" id="user" autocomplete="off">
 					<span id="username" class="text-danger font-weight-bold"></span>
 				</div>
 				<input type="submit" name="submit" value="submit" class="btn btn-success">
@@ -122,8 +127,8 @@ button:hover {
 
 
                 $mail = new \Pimcore\Mail();
-                $mail->addTo('gargmansi24@gmail.com');
-                $mail->setSubject('Products Feedback');
+                // $mail->addTo('gargmansi24@gmail.com');
+                // $mail->setSubject('Products Feedback');
                 $mail->setDocument('/feedbackEmail');
                 // $mail->setParams($params);
                 $mail->send();

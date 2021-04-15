@@ -13,7 +13,7 @@
             <li><a href="/productListing">Products</a></li>
             
             <li><a href="#about">About</a></li>
-            <li><a href="/feedback">Contact Us</a></li>
+            <li><a href="/feedback">Feedback</a></li>
         </ul>
     </div>
   </head>
@@ -48,6 +48,7 @@ ul{
     text-decoration: none;
     color: black;
     padding: 0;
+    margin-left: 14%;
 }
 
 li{

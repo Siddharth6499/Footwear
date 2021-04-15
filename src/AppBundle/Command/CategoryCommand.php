@@ -87,7 +87,6 @@ class CategoryCommand extends AbstractCommand
                     $object->setName($cat->name);
                     $object->setStatus($cat->status);
                     
-       	     $object->setImage($image);
       
                 	
        	     // $obj->save();
@@ -96,12 +95,12 @@ class CategoryCommand extends AbstractCommand
                    // $msg = "Data Imported Successfully.\n";
                    
                   
-                    $mail = new \Pimcore\Mail();
-                    $mail->addTo('gargmansi24@gmail.com');
-                    $mail->setSubject('Category Imported Sucessfully');
-                    $mail->setDocument('/importCategoryEmail');
-                    // $mail->setParams($params);
-                    $mail->send();
+                    // $mail = new \Pimcore\Mail();
+                    // $mail->addTo('gargmansi24@gmail.com');
+                    // $mail->setSubject('Category Imported Sucessfully');
+                    // $mail->setDocument('/importCategoryEmail');
+                    // // $mail->setParams($params);
+                    // $mail->send();
                 }
 
 

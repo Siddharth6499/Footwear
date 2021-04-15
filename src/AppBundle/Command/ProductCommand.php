@@ -83,7 +83,8 @@ class ProductCommand extends AbstractCommand
                     $object->setBrand($prod->brand);
                     $object->setSize($prod->size);
                     $object->setDescription($prod->description);
-                    $object->setDiscount($prod->discount);
+                    $unit = DataObject\QuantityValue\Unit::getByAbbreviation('%');
+                    $object->setDiscount(new DataObject\Data\QuantityValue($prod->discount, $unit->getId()));
                     $object->setReturnable($prod->returnable);
                     $object->setMadeIn($prod->madeIn);
                     $object->setStatus($prod->status);
@@ -119,16 +120,14 @@ class ProductCommand extends AbstractCommand
                        
                         $object->getVariants()->setSports($Brick);
 
+                        $Brick = new DataObject\Objectbrick\Data\Shoes($object);
+                        $Brick->setShoesType($prod->shoesType);
+                       
+                        $object->getVariants()->setShoes($Brick);
+
                         $object->save();
 
-                        // $logListing = new \Pimcore\Model\DataObject\Log\Listing(); 
-                        // $this->dump("in log");
-                        // $this->dump($object->getKey()) or die;
-                        // $this->dump($->getKey()) or die;
-                        // if($logListing->getKey() == $object->getKey())
-                        // {
-                        //     $object->update();
-                        // }
+
                         
                         $this->dump("Data Imported Successfully");
 
@@ -184,10 +183,6 @@ class ProductCommand extends AbstractCommand
                     if($prod->color==NULL)
                     {
                         $msg .= "Color is given NULL. \n";
-                    }
-                    if($prod->manufactureDate==NULL)
-                    {
-                        $msg .= "Manufactured Date is given NULL. \n";
                     }
                     else
                     {
@@ -258,10 +253,6 @@ class ProductCommand extends AbstractCommand
                     {
                         $msg .= "Color is given NULL. \n";
                     }
-                    if($prod->manufactureDate==NULL)
-                    {
-                        $msg .= "Manufactured Date is given NULL. \n";
-                    }
                     else
                     {
                         $msg = "Data Imported Successfully";
@@ -286,8 +277,8 @@ class ProductCommand extends AbstractCommand
                         $prod->save();
                     }
                     $mail = new \Pimcore\Mail();
-                    $mail->addTo('gargmansi24@gmail.com');
-                    $mail->setSubject('Products Imported Sucessfully');
+                    // $mail->addTo('gargmansi24@gmail.com');
+                    // $mail->setSubject('Products Imported Sucessfully');
                     $mail->setDocument('/importEmail');
                     // $mail->setParams($params);
                     $mail->send();

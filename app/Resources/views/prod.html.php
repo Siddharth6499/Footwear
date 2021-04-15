@@ -26,15 +26,15 @@ $this->extend('layout.html.php');
 <style>
 * {
   box-sizing: border-box;
-    background-image: url('https://images.unsplash.com/photo-1585314062604-1a357de8b000?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80');
-     background-repeat: no-repeat;
-   background-attachment: fixed;
+  background-image: url('../images/image.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: 100% 100%;
 }
 table {
   border-collapse: collapse;
   width: 100%;
-} 
+}
 
 .form-control form-control-sm{
     color: white;
@@ -70,10 +70,12 @@ table.d {
 }
 
 th,td {
-  border: 1px solid white;
+  border: 3px solid white;
   text-align: left;
   padding: 8px;
-  color: rgb(211, 180, 180)
+  color: whitesmoke;
+  text-shadow: whitesmoke;
+  font-weight: bolder;
 }
 
 th {
@@ -128,7 +130,6 @@ p {
    <div class="container text-white">
   <div class="row justify-content-center text-white">
   <div class="col-lg-10 bg-light rounded my-2 py-2 text-white">
-  <h4 class="text-center text-white pt-2">Product Listing</h4><hr>
    <table class="table table-bordered table-striped table-hover">
      
            <thead>   <tr>

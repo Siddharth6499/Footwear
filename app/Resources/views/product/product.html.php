@@ -11,7 +11,7 @@ $this->extend('layout.html.php');
 <style>
 * {
   box-sizing: border-box;
-    background-image: url('https://images.unsplash.com/photo-1585314062604-1a357de8b000?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80');
+    background-image: url('../images/Background.jpg');
      background-repeat: no-repeat;
    background-attachment: fixed;
   background-size: 100% 100%;
@@ -158,9 +158,12 @@ p {
        <?php
         foreach($prod as $product) 
         {
+          if($product->getStatus() == "Available")
+          {
             ?>
             
             <tr >
+            
             <td ><?=$product->getSKU(); ?></td>
             <td ><?=$product->getName(); ?></td>
             <td ><?=$product->getDescription(); ?></td> 
@@ -194,6 +197,7 @@ p {
             
             </tr>
         <?php
+          }
      } 
      ?>  
        </tbody>          

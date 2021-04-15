@@ -27,10 +27,9 @@ transform: translateY(-50%);
 body {
 font-family: 'Cabin', sans-serif;
 background-color: #f7f9fa;
-background-image: url('https://i.pinimg.com/originals/7f/53/63/7f536368afa889b7f55db9e25ff7f2c0.jpg');
+background-image: url('../images/Background.jpg');
 background-repeat: no-repeat;
 background-size: cover;
-
 }
 
 .box-layout, .form {
@@ -228,7 +227,6 @@ h1.b {
 }
  .myDiv {
     text-align: center;
-    background-image: url('https://images.unsplash.com/photo-1585314062604-1a357de8b000?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80');
 }
  
  
@@ -239,12 +237,12 @@ h1.b {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
 </head>
 <body>
-<div styles ="background-image: url('https://www.kingarthurbaking.com/sites/default/files/inline-images/cupcakes.jpg');"> 
+<div class="blur"> 
 
     <div class="myDiv">
             <div class="claim"><h1 class="b"> The Footwear Shop</h1>
 
-              <img src="/myassets/logo.jpeg" height="200" >
+              <img src="/myassets/logo1.png" height="200" >
       </div>     
             </div>
         </div>

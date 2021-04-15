@@ -1,0 +1,6 @@
+"key","SKU","name","brand","size","description","discount","%","color","groupType","madeIn","returnable","status","image","category","price","Rs","types","heelType","sportsshoesType",
+"002","1001","Casual shoes","Puma","10","Casual shoes are characterized by sturdy leather uppers, non-leather outsoles, and wide profile.","40","%","0, 140, 255, 1","Men's Wear","IN","1","Available","/images/casualimage.jpeg","Shoes","1599","Rs","courtShoes"
+"003","1002","Boots","Clarks","6","Boots feature a rubber outsole without such deep indentations, providing some slip-resistance","30","%","0, 140, 255, 1","Women's Wear","IN","1","Available","/images/boots.jpeg","Boots","3999","Rs","GSN3Beige"
+"004","1003","Block Sandals","Bata","6","Block heels are shoes with broad bases","25","%","0, 140, 255, 1","Women's Wear","IN","1","Available","/images/blockheel.jpeg","Sandals","2500","Rs","GSN2"
+"005","1004","Sports shoes","Bata","6","Shoes for running, basketball and tennis","25","%","0, 140, 255, 1","Kid's Wear","IN","1","Available","/images/kidshoe.jpeg","Shoes","1299","Rs","runningShoes"
+"006","1005","Sports shoes for women","Adidas","6","Shoes for running, basketball and tennis","50","%","0, 140, 255, 1","Women's Wear","IN","1","Available","/images/runningwomen.jpeg","Shoes","4299","Rs","runningShoes"

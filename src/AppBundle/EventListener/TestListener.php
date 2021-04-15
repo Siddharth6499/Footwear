@@ -16,7 +16,7 @@ class TestListener {
    {
    	$product = $e->getObject();
     $date = date("Y-m-d");
-   	if($product->getManufacturedate() > $date)
+   	if($product->getManufactureDate() > $date)
    	{
     
    	throw new \Pimcore\Model\Element\ValidationException("Invalid Date !!!!!!!!!!!!!!!!!");
